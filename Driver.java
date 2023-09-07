@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Driver {
-    
+    // Counts english letters in any line of input but ends at an EOF marker
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
