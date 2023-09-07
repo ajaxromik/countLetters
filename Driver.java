@@ -8,7 +8,14 @@ public class Driver {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter text then press enter: ");
-        String input = sc.nextLine();
+        String input = "";
+        try {
+            while (sc.hasNextLine()) {
+                input += sc.nextLine();
+            }
+        } finally {
+            sc.close();
+        }
         
         input = input.replaceAll("[^A-z]","").toLowerCase(); //reduces to the necessary letters
         
@@ -24,8 +31,6 @@ public class Driver {
         }
         System.out.println(letterMap);
 
-        sc.close();
-        
     }
 
 }
