@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Driver {
@@ -9,10 +10,22 @@ public class Driver {
         System.out.println("Enter text then press enter: ");
         String input = sc.nextLine();
         
-        input = input.replaceAll("[^A-z]","").toLowerCase();
+        input = input.replaceAll("[^A-z]","").toLowerCase(); //reduces to the necessary letters
         
-        System.out.println(input);
+        HashMap<Character, Integer> letterMap = new HashMap<>();
+        // System.out.println(input);
+        for(int i=0; i<input.length(); i++){
+            char c = input.charAt(i);
+            if(letterMap.containsKey(c)){
+                letterMap.put(c, letterMap.get(c) + 1);
+            } else {
+                letterMap.put(c, 1);
+            }
+        }
+        System.out.println(letterMap);
 
+        sc.close();
+        
     }
 
 }
